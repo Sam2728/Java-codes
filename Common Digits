@@ -1,0 +1,39 @@
+// "static void main" must be defined in a public class.
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        int x=a,y=b,z=c,m=0;
+        while(a>0)
+        {
+            int t=a%10;
+            
+            while(b>0)
+            {
+                int t2=b%10;
+                if(t==t2)
+                {
+                while(c>0)
+                {
+                    int t3=c%10;
+                    if(t2==t3)
+                    {
+                        System.out.print(t2+" ");
+                        m+=1;
+                    }
+                    c=c/10;
+                }
+                }
+                b=b/10;
+                c=z;
+                
+            }
+            a=a/10;
+            b=y;
+        }
+        if(m==0)
+        System.out.print(-1);
+    }
+}
