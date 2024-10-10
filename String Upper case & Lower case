@@ -1,0 +1,40 @@
+// "static void main" must be defined in a public class.
+public class Main {
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine(),result="";
+        int l=s.length();
+        int uc=0,lc=0;
+        for(int i=0;i<l;i++)
+        {
+            if(s.charAt(i)>='A'&&s.charAt(i)<='Z')
+                uc++;
+            else if(s.charAt(i)>='a'&&s.charAt(i)<='z')
+                lc++;
+        }
+         for(int i=0;i<l;i++)
+         {
+             char c=s.charAt(i);
+             if(uc>lc)
+             {
+                if(c>='a'&&c<='z')
+                {
+                    result+=(char)(c-32);
+                }
+                else
+                    result+=s.charAt(i);
+            }
+            else
+            {
+                if(c>='A'&&c<='Z')
+                {
+                    result+=(char)(c+32);
+                }
+                else
+                    result+=s.charAt(i);
+            }
+        }
+        System.out.println(result);
+    }
+}
