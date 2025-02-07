@@ -1,0 +1,41 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        String sb="";
+        int max=0;
+        for(int i=0;i<str.length();i++)
+        {
+            int temp=check(str,i);
+            if(temp>max)
+            {
+                max=temp;
+                int j=i;
+                sb="";
+                while(j<=temp+1)
+                {
+                    sb+=str.charAt(j);
+                    j++;
+                }
+            }
+        }
+        System.out.println(max);
+        System.out.println(sb);
+    }
+    public static int check(String str,int i)
+    {
+        boolean[] arr=new boolean[26];
+        int res=0;
+        for(;i<str.length();i++)
+        {
+            if(arr[str.charAt(i)-'a'])
+                return res;
+            else
+            {
+                arr[str.charAt(i)-'a']=true;
+                res++;
+            }
+        }
+        return res;
+    }
+}
